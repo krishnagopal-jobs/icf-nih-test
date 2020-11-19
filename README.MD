@@ -1,5 +1,5 @@
 To build the module, do the following:
 
-cd mystack
+cd my-stack
 mvn clean install
 
