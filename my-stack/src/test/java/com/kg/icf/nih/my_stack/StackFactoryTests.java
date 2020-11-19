@@ -6,12 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.StackFactory.StackType;
 
-class StackFactoryTest {
+class StackFactoryTests {
 
 	@Test
 	void testGetInstanceIntStackType() {
 		Stack<Integer> stack = StackFactory.getInstance(10, StackType.MyStack);
-		Stack<String> stack2 = StackFactory.getInstance(10, StackType.MyStack);
+		Stack<String> stack2 = StackFactory.getInstance(10, StackType.JavaBackedStack);
+		Stack<Double> stack3 = StackFactory.getInstance(10, StackType.ThreadLocalStack);
 	}
 	
 	@Test

@@ -4,9 +4,16 @@ import java.util.NoSuchElementException;
 
 import com.kg.icf.nih.my_stack.Stack;
 
+/**
+ * This is an adapter to java.util.Stack.
+ * 
+ * @author Owner
+ *
+ * @param <T>
+ */
 public class JavaStack<T> implements Stack<T> {
 
-	java.util.Stack<T> stack;
+	private java.util.Stack<T> stack;
 
 	private int maximumSize;
 
@@ -40,7 +47,7 @@ public class JavaStack<T> implements Stack<T> {
 	}
 
 	@Override
-	public int getCurrentSize() {
+	public synchronized int getCurrentSize() {
 		return currentSize;
 	}
 

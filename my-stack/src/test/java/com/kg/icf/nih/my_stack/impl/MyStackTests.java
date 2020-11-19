@@ -9,17 +9,17 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.Stack;
 
-class ThreadLocalStackTest {
+class MyStackTests {
 
 	@Test
-	void testThreadLocalStack() {
-		Stack<Integer> stack = new ThreadLocalStack<>(10);
+	void testMyStack() {
+		Stack<Integer> stack = new MyStack<>(10);
 		assertEquals(0, stack.getCurrentSize());
 	}
 
 	@Test
 	void testPush() {
-		Stack<Integer> stack = new ThreadLocalStack<>(10);
+		Stack<Integer> stack = new MyStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
@@ -28,7 +28,7 @@ class ThreadLocalStackTest {
 
 	@Test
 	void testPushIndexOutOfBoundException() {
-		Stack<String> stack = new ThreadLocalStack<>(3);
+		Stack<String> stack = new MyStack<>(3);
 		stack.push("1");
 		stack.push("2");
 		stack.push("3");
@@ -37,7 +37,7 @@ class ThreadLocalStackTest {
 
 	@Test
 	void testPop() {
-		Stack<Integer> stack = new ThreadLocalStack<>(10);
+		Stack<Integer> stack = new MyStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
@@ -49,7 +49,7 @@ class ThreadLocalStackTest {
 
 	@Test
 	void testPopException() {
-		Stack<Integer> stack = new ThreadLocalStack<>(10);
+		Stack<Integer> stack = new MyStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
@@ -62,7 +62,7 @@ class ThreadLocalStackTest {
 
 	@Test
 	void testGetCurrentSize() {
-		Stack<Integer> stack = new ThreadLocalStack<>(10);
+		Stack<Integer> stack = new MyStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);

@@ -9,17 +9,18 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.Stack;
 
-class MyStackTest {
+class JavaStackTests {
 
 	@Test
-	void testMyStack() {
-		Stack<Integer> stack = new MyStack<>(10);
+	void testJavaStack() {
+		new JavaStack<String>();
+		Stack<Integer> stack = new JavaStack<>(10);
 		assertEquals(0, stack.getCurrentSize());
 	}
 
 	@Test
 	void testPush() {
-		Stack<Integer> stack = new MyStack<>(10);
+		Stack<Integer> stack = new JavaStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
@@ -28,7 +29,7 @@ class MyStackTest {
 
 	@Test
 	void testPushIndexOutOfBoundException() {
-		Stack<String> stack = new MyStack<>(3);
+		Stack<String> stack = new JavaStack<>(3);
 		stack.push("1");
 		stack.push("2");
 		stack.push("3");
@@ -36,33 +37,33 @@ class MyStackTest {
 	}
 
 	@Test
-	void testPull() {
-		Stack<Integer> stack = new MyStack<>(10);
+	void testPop() {
+		Stack<Integer> stack = new JavaStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		assertEquals(3, stack.pull());
-		assertEquals(2, stack.pull());
-		assertEquals(1, stack.pull());
+		assertEquals(3, stack.pop());
+		assertEquals(2, stack.pop());
+		assertEquals(1, stack.pop());
 		assertEquals(0, stack.getCurrentSize());
 	}
 
 	@Test
-	void testPullException() {
-		Stack<Integer> stack = new MyStack<>(10);
+	void testPopException() {
+		Stack<Integer> stack = new JavaStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		assertEquals(3, stack.pull());
-		assertEquals(2, stack.pull());
-		assertEquals(1, stack.pull());
+		assertEquals(3, stack.pop());
+		assertEquals(2, stack.pop());
+		assertEquals(1, stack.pop());
 		assertEquals(0, stack.getCurrentSize());
-		assertThrows(NoSuchElementException.class, stack::pull);
+		assertThrows(NoSuchElementException.class, stack::pop);
 	}
 
 	@Test
 	void testGetCurrentSize() {
-		Stack<Integer> stack = new MyStack<>(10);
+		Stack<Integer> stack = new JavaStack<>(10);
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);

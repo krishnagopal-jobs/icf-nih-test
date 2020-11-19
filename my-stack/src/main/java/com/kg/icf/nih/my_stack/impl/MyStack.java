@@ -4,6 +4,13 @@ import java.util.NoSuchElementException;
 
 import com.kg.icf.nih.my_stack.Stack;
 
+/**
+ * This is a threadsafe class. It shares the stack amongst all different threads.
+ * 
+ * @author Owner
+ *
+ * @param <T>
+ */
 public class MyStack<T> implements Stack<T> {
 
 	private Object[] array;
@@ -15,7 +22,7 @@ public class MyStack<T> implements Stack<T> {
 	}
 
 	@Override
-	public void push(T item) {
+	public synchronized void push(T item) {
 		if (currentSize >= array.length) {
 			throw new IndexOutOfBoundsException(currentSize);
 		}
@@ -24,7 +31,7 @@ public class MyStack<T> implements Stack<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T pull() throws NoSuchElementException {
+	public synchronized T pop() throws NoSuchElementException {
 		if (currentSize == 0) {
 			throw new NoSuchElementException();
 		}
