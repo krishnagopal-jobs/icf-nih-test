@@ -31,7 +31,7 @@ public class LongestSequenceFinder {
 			previousNumber = currentNumber;
 		}
 
-		System.out.printf("Number with maximum sequential repitions : %d, index : %d , maxSequentialRepitions : %d \n",
+		System.out.printf("Number with maximum sequential repetitions : %d, index : %d , max Sequential repetitions : %d \n",
 				array[maximumSequenceStartIndex], maximumSequenceStartIndex, maxSequentialRepetitions);
 
 	}
