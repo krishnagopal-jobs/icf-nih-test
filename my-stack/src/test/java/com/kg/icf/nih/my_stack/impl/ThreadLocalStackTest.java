@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.Stack;
 
-class ThreadLocalStackTests {
+class ThreadLocalStackTest {
 
 	@Test
 	void testThreadLocalStack() {

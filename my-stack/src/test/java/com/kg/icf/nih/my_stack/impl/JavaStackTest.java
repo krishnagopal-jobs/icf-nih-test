@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.Stack;
 
-class JavaStackTests {
+class JavaStackTest {
 
 	@Test
 	void testJavaStack() {

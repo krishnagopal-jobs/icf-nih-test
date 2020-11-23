@@ -35,7 +35,10 @@ public class MyStack<T> implements Stack<T> {
 		if (currentSize == 0) {
 			throw new NoSuchElementException();
 		}
-		return (T) array[--currentSize];
+		//[o0,o1,o2,o3] cs = 4
+		T result = (T) array[--currentSize]; //cs = 3; r= o3
+		array[currentSize] = null; //[o0,o1,o2]
+		return result;//o3
 	}
 
 	@Override

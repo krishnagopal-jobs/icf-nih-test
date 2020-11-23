@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.Stack;
 
-class MyStackTests {
+class MyStackTest {
 
 	@Test
 	void testMyStack() {
@@ -17,6 +17,21 @@ class MyStackTests {
 		assertEquals(0, stack.getCurrentSize());
 	}
 
+	@Test
+	void testRound() {
+		Stack<Integer> stack = new MyStack<>(10);
+		for (int i = 0; i < 10; i++) {
+			stack.push(i);
+		}
+		assertThrows(IndexOutOfBoundsException.class, () -> stack.push(10));
+		for (int i = 0; i < 10; i++) {
+			assertEquals(9-i, stack.pop());
+		}
+		assertThrows(NoSuchElementException.class, () -> stack.pop());
+		assertEquals(0, stack.getCurrentSize());
+
+	}
+	
 	@Test
 	void testPush() {
 		Stack<Integer> stack = new MyStack<>(10);

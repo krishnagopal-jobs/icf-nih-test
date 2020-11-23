@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.kg.icf.nih.my_stack.StackFactory.StackType;
 
-class StackFactoryTests {
+class StackFactoryTest {
 
 	@Test
 	void testGetInstanceIntStackType() {
