@@ -1,5 +1,5 @@
 // same name as main module and open for deep reflection
-open module com.kg.icf.nih.my_stack {
+open module com.kg.icf.nih {
     exports com.kg.icf.nih.my_stack;                // - " -
 
     requires org.junit.jupiter.api; // additional test requirement
