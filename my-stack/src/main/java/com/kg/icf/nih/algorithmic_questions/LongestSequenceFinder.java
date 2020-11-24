@@ -9,8 +9,8 @@ public class LongestSequenceFinder {
 //						11, 11, 11, 11, 11, 11, 11, 11 };
 
 
-		int maxSequentialRepetitions = 0;
-		int currentNumberOfRepetitions = 0;
+		int maxSequentialOccurences = 0;
+		int currentSequentialOccurences = 0;
 		int previousNumber = array[0];
 		int currentNumber;
 		int maximumSequenceStartIndex = 0;
@@ -19,20 +19,20 @@ public class LongestSequenceFinder {
 		for (int i = 0; i < array.length; i++) {
 			currentNumber = array[i];
 			if (currentNumber == previousNumber) {
-				currentNumberOfRepetitions++;
+				currentSequentialOccurences++;
 			} else {
-				currentNumberOfRepetitions = 1;
+				currentSequentialOccurences = 1;
 				currentSequenceStartIndex = i;
 			}
-			if (currentNumberOfRepetitions > maxSequentialRepetitions) {
-				maxSequentialRepetitions = currentNumberOfRepetitions;
+			if (currentSequentialOccurences > maxSequentialOccurences) {
+				maxSequentialOccurences = currentSequentialOccurences;
 				maximumSequenceStartIndex = currentSequenceStartIndex;
 			}
 			previousNumber = currentNumber;
 		}
 
-		System.out.printf("Number with maximum sequential repetitions : %d, index : %d , max Sequential repetitions : %d \n",
-				array[maximumSequenceStartIndex], maximumSequenceStartIndex, maxSequentialRepetitions);
+		System.out.printf("Number with maximum sequential occurences : %d, index : %d , max Sequential occurences : %d \n",
+				array[maximumSequenceStartIndex], maximumSequenceStartIndex, maxSequentialOccurences);
 
 	}
 
